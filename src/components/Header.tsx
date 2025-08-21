@@ -13,9 +13,19 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Road2Resell
+        <div className="flex items-center space-x-3">
+          <img 
+            src="/lovable-uploads/4c4b1188-99e7-4e99-9c7e-56074a7bde3e.png" 
+            alt="Road2Resell - We come to you for electronics"
+            className="h-12 w-auto"
+          />
+          <div className="flex flex-col">
+            <div className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Road2Resell
+            </div>
+            <div className="text-xs text-muted-foreground font-medium">
+              We Pay the Highest Value
+            </div>
           </div>
         </div>
 
