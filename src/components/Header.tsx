@@ -55,10 +55,13 @@ export const Header = () => {
 
         {/* Contact Phone */}
         <div className="flex items-center space-x-4">
-          <div className="hidden sm:flex items-center space-x-2 text-sm font-medium">
+          <a 
+            href="tel:+14374777495" 
+            className="hidden sm:flex items-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
+          >
             <Phone className="h-4 w-4 text-primary" />
             <span>(437) 477-7495</span>
-          </div>
+          </a>
           <Button 
             variant="hero" 
             size="sm"
