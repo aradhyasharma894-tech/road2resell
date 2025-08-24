@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Upload, Phone, Mail, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase, type QuoteRequest } from "@/lib/supabase";
 
 export const QuoteFormSection = () => {
   const { toast } = useToast();
@@ -19,9 +18,8 @@ export const QuoteFormSection = () => {
     condition: "",
     image: null as File | null
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -34,85 +32,21 @@ export const QuoteFormSection = () => {
       return;
     }
 
-    setIsSubmitting(true);
+    // Simulate form submission
+    toast({
+      title: "Quote Request Sent!",
+      description: "Thanks for your request! We'll review your device details and get back to you soon.",
+    });
 
-    try {
-      let imageUrl = null;
-
-      // Upload image if provided
-      if (formData.image) {
-        const fileExt = formData.image.name.split('.').pop();
-        const fileName = `${Date.now()}.${fileExt}`;
-        
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('quote-images')
-          .upload(fileName, formData.image);
-
-        if (uploadError) {
-          console.error('Image upload error:', uploadError);
-        } else {
-          const { data: { publicUrl } } = supabase.storage
-            .from('quote-images')
-            .getPublicUrl(fileName);
-          imageUrl = publicUrl;
-        }
-      }
-
-      // Save quote request to database
-      const quoteData: Omit<QuoteRequest, 'id' | 'created_at'> = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        product: formData.product,
-        condition: formData.condition,
-        image_url: imageUrl
-      };
-
-      const { data, error } = await supabase
-        .from('quote_requests')
-        .insert([quoteData])
-        .select()
-        .single();
-
-      if (error) {
-        throw error;
-      }
-
-      // Send emails via edge function
-      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-        body: { quoteData: { ...quoteData, image_url: imageUrl } }
-      });
-
-      if (emailError) {
-        console.error('Email error:', emailError);
-        // Don't throw error for email - form was still submitted successfully
-      }
-
-      toast({
-        title: "Quote Request Sent!",
-        description: "Thanks for your request! We'll review your device details and get back to you soon.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        product: "",
-        condition: "",
-        image: null
-      });
-
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast({
-        title: "Submission Error",
-        description: "There was an issue submitting your request. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      product: "",
+      condition: "",
+      image: null
+    });
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -236,8 +170,8 @@ export const QuoteFormSection = () => {
                   </div>
                 </div>
 
-                <Button type="submit" variant="quote" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Submitting..." : "Get My Quote"}
+                <Button type="submit" variant="quote" size="lg" className="w-full">
+                  Get My Quote
                 </Button>
               </form>
             </CardContent>
