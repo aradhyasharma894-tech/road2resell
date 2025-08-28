@@ -8,8 +8,9 @@ export const ContactSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Road2Resell
+            <div className="text-2xl font-bold">
+              <span className="text-black">Road2</span>
+              <span className="text-green-500">Resell</span>
             </div>
             <p className="text-gray-300">
               Buy, Sell, Trade Electronics at Your Doorstep. Making electronics resale convenient and trustworthy.
@@ -27,8 +28,7 @@ export const ContactSection = () => {
             
             <div className="space-y-2">
               <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span>(437) 477-7495</span>
+            
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
@@ -95,22 +95,34 @@ export const ContactSection = () => {
             <div className="space-y-3">
               <p className="text-sm text-gray-300">Follow us:</p>
               <div className="flex space-x-3">
-                <Button variant="ghost" size="icon" className="text-gray-300 hover:text-primary">
+                {/* WhatsApp or Messenger (replace link if needed) */}
+                <a href="https://wa.me/14374777495" target="_blank" rel="noopener noreferrer" 
+                   className="text-gray-300 hover:text-primary">
                   <MessageCircle className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-300 hover:text-primary">
+                </a>
+
+                {/* Instagram */}
+                <a href="https://www.instagram.com/road2reselltoronto?igsh=eGh2azI3Z2hvY3Zi&utm_source=qr" 
+                   target="_blank" rel="noopener noreferrer" 
+                   className="text-gray-300 hover:text-primary">
                   <Instagram className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-300 hover:text-primary">
+                </a>
+
+                {/* Facebook (replace with your actual page link) */}
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" 
+                   className="text-gray-300 hover:text-primary">
                   <Facebook className="h-5 w-5" />
-                </Button>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 Road2Resell. All rights reserved.</p>
+          <p>
+            &copy; 2025 <span className="text-black">Road2</span>
+            <span className="text-green-500">Resell</span>. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

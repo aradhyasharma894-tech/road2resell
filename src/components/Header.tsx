@@ -2,28 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 
 export const Header = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex flex-col md:flex-row h-auto md:h-20 items-center justify-between px-4 gap-3 md:gap-0">
+        
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <img 
-            src="/lovable-uploads/4c4b1188-99e7-4e99-9c7e-56074a7bde3e.png" 
+          <img
+            src="/logo2.jpg"
             alt="Road2Resell - We come to you for electronics"
-            className="h-12 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
           <div className="flex flex-col">
-            <div className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Road2Resell
+            <div className="text-xl md:text-2xl font-bold">
+              <span className="text-black">Road2</span>
+              <span className="text-green-600">Resell</span>
             </div>
-            <div className="text-xs text-muted-foreground font-medium">
+            <div className="text-xs md:text-sm text-muted-foreground font-medium">
               We Pay the Highest Value
             </div>
           </div>
@@ -32,50 +27,50 @@ export const Header = () => {
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <button
-            onClick={() => scrollToSection('home')}
+            onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Home
           </button>
           <button
-            onClick={() => scrollToSection('how-it-works')}
+            onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             How It Works
           </button>
           <button
-            onClick={() => scrollToSection('get-quote')}
+            onClick={() => window.open("https://forms.gle/K3zg26oDVxsaXiNK9", "_blank")}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Get Quote
           </button>
           <button
-            onClick={() => scrollToSection('terms')}
+            onClick={() => document.getElementById("terms")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Terms & Conditions
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Contact
           </button>
         </nav>
 
-        {/* Contact Phone */}
+        {/* Call Now + Quote Button */}
         <div className="flex items-center space-x-4">
-          <a 
-            href="tel:+14374777495" 
-            className="hidden sm:flex items-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
+          <a
+            href="tel:+14374430079"
+            className="flex items-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
           >
-            <Phone className="h-4 w-4 text-primary" />
-            <span>(437) 477-7495</span>
+            <Phone className="h-5 w-5 text-primary" />
+            <span>Call Now</span>
           </a>
-          <Button 
-            variant="hero" 
+          <Button
+            variant="hero"
             size="sm"
-            onClick={() => scrollToSection('get-quote')}
+            onClick={() => window.open("https://forms.gle/K3zg26oDVxsaXiNK9", "_blank")}
           >
             Get Quote
           </Button>
