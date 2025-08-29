@@ -14,7 +14,7 @@ export const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                Turn your old electronics into{" "}
+                Turn your electronics into{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   instant cash
                 </span>{" "}
@@ -63,7 +63,8 @@ export const HeroSection = () => {
 
             <div className="text-sm text-muted-foreground">
               <span className="font-semibold text-primary">
-                Buy, Sell, Trade Electronics at Your Doorstep.
+                <h1><strong>Buy, Sell, Trade Electronics at Your Doorstep.</strong></h1>
+
               </span>
             </div>
           </div>

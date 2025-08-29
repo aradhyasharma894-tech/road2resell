@@ -9,7 +9,7 @@ export const Header = () => {
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <img
-            src="/logo2.jpg"
+            src="/logo2.png"
             alt="Road2Resell - We come to you for electronics"
             className="h-16 md:h-20 w-auto"
           />
@@ -19,7 +19,7 @@ export const Header = () => {
               <span className="text-green-600">Resell</span>
             </div>
             <div className="text-xs md:text-sm text-muted-foreground font-medium">
-              We Pay the Highest Value
+              Sell Electronics Right At Your Doorstep!
             </div>
           </div>
         </div>

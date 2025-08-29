@@ -11,13 +11,11 @@ export const TermsSection = () => {
         "Warranty (if given) covers basic functionality only, not damage, misuse, or normal wear and tear."
       ]
     },
-    {
-      title: "For Sellers",
-      items: [
-        "All sales to Road2Resell are final.",
-        "Once payment is made, the device becomes our property and cannot be returned."
-      ]
-    },
+    
+
+
+
+    
     {
       title: "Seller Terms & Conditions",
       items: [
