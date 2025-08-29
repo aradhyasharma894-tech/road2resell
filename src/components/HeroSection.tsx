@@ -61,11 +61,11 @@ export const HeroSection = () => {
               </Button>
             </div>
 
-            <div className="text-sm text-muted-foreground">
-              <span className="font-semibold text-primary">
-                <h1><strong>Buy, Sell, Trade Electronics at Your Doorstep.</strong></h1>
-
-              </span>
+            {/* Updated Heading */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                Buy, Sell, Trade Electronics at Your Doorstep.
+              </h2>
             </div>
           </div>
 
