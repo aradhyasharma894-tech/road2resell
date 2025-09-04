@@ -14,21 +14,22 @@ export const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                Turn your electronics into{" "}
+                Sell iPhones, Laptops, Tablets & Cameras in{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  instant cash
+                  Toronto GTA
                 </span>{" "}
-                – fast, safe, and convenient.
+                for Instant Cash – Fast, Safe & Hassle-Free.
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                We pay the highest value for your electronics—from cell phones and laptops to cameras, 
-                tablets, gaming consoles, and more. Whether your devices are brand new, gently used, 
-                or even broken, we make the process fast and hassle-free. With cash paid instantly at 
-                your doorstep, your unused tech can quickly turn into money in your pocket.
+                Looking to <strong>sell used electronics in Toronto</strong>? 
+                We offer doorstep pickup across GTA for <strong>phones, laptops, tablets, cameras</strong> and even broken devices. Get{" "}
+                <strong>instant cash for electronics Toronto</strong> with secure data wiping, eco-friendly recycling, and no hidden fees. 
+                Sell broken phones, trade tablets, or get top cash value for your old gadgets today!
               </p>
             </div>
 
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
@@ -41,12 +42,11 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  👉 Get a Free Quote Now
+                  💰 Get a Free Quote Now
                   <ChevronDown className="ml-2 h-5 w-5" />
                 </a>
               </Button>
 
-              {/* Smooth scroll to storyboard */}
               <Button
                 variant="outline"
                 size="lg"
@@ -61,11 +61,14 @@ export const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Updated Heading */}
-            <div>
+            {/* Trust & Subheading */}
+            <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-bold text-primary">
-                Buy, Sell, Trade Electronics at Your Doorstep.
+                Electronics Pickup GTA – Safe, Secure & Best Prices Guaranteed
               </h2>
+              <p className="text-muted-foreground">
+                Serving Toronto & GTA – doorstep pickup, instant cash for your electronics, and hassle-free service.
+              </p>
             </div>
           </div>
 
@@ -74,7 +77,7 @@ export const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={heroImage}
-                alt="Electronics resale - phones, laptops, tablets, cameras"
+                alt="Sell iPhones, laptops, tablets, cameras in Toronto GTA for instant cash"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

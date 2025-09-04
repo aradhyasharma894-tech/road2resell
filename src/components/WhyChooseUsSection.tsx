@@ -5,28 +5,29 @@ export const WhyChooseUsSection = () => {
     {
       icon: Truck,
       title: "Convenience",
-      description: "No need to travel, we come to you at your preferred time and location."
+      description: "No need to travel — we offer electronics pickup in Toronto GTA at your doorstep, on your preferred schedule."
     },
     {
       icon: Clock,
       title: "Instant Payment",
-      description: "Get paid in cash on the spot after inspection. No waiting for checks or transfers."
+      description: "Get cash instantly for your devices in Toronto GTA. No waiting for checks or bank transfers."
     },
     {
       icon: Shield,
       title: "Trustworthy",
-      description: "Safe, transparent deals with no hidden fees. We will securely wipe your device after purchase."
+      description: "Safe, transparent deals with no hidden fees. We securely wipe your devices after purchase."
     },
     {
       icon: Leaf,
       title: "Eco-Friendly",
-      description: "We give electronics a second life and help reduce e-waste for a greener planet."
+      description: "We give electronics a second life and reduce e-waste in Toronto GTA for a greener planet."
     }
   ];
 
   return (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Why Choose{" "}
@@ -34,10 +35,11 @@ export const WhyChooseUsSection = () => {
             <span className="text-green-600">Resell</span>?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're committed to providing the best experience for selling your electronics.
+            Sell iPhones, laptops, tablets, cameras, and even broken electronics in Toronto GTA safely, conveniently, and for top cash.
           </p>
         </div>
 
+        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-card p-6 rounded-xl shadow-sm border hover:shadow-md transition-shadow">

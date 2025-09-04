@@ -1,27 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, FileText, CreditCard, UserCheck, RotateCcw } from "lucide-react";
 
 export const TermsSection = () => {
   const policies = [
     {
       title: "For Buyers",
       items: [
-        "<strong>7-Day No-Questions-Asked Refund:</strong> You may return any item within 7 days for a full refund, as long as it's in the same condition as sold and with the receipt.",
+        "<strong>7-Day No-Questions-Asked Refund:</strong> You may return any purchased electronics within 7 days for a full refund if they are in the same condition as sold and with the receipt. This applies to items such as iPhones, laptops, tablets, and cameras.",
         "After 7 days, all sales are final, unless a separate warranty was provided.",
         "Warranty (if given) covers basic functionality only, not damage, misuse, or normal wear and tear."
       ]
     },
-    
-
-
-
-    
     {
       title: "Seller Terms & Conditions",
       items: [
         "You must own the device – Only sell items that belong to you. Stolen, lost, or unpaid-financed devices are not accepted.",
-        "Device condition – We buy new, used, or broken electronics, but we may refuse any item after inspection.",
-        "Payment – Once we inspect and agree on a price, payment is made on the spot via cash.",
+        "Device condition – We buy new, used, or broken electronics, including iPhones, laptops, tablets, and cameras in Toronto GTA. Items may be refused after inspection.",
+        "Payment – Once we inspect and agree on a price, payment is made on the spot in cash. Get <strong>instant cash for electronics in Toronto</strong>.",
         "ID verification – A valid photo ID may be required. Serial numbers/IMEIs are checked to prevent fraud.",
         "No returns – Once payment is made, the device belongs to Road2Resell."
       ]
@@ -37,6 +31,10 @@ export const TermsSection = () => {
             <span className="text-green-600">Resell</span> –{" "}
             <span className="text-primary">Warranty, Refund & Terms</span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            We buy, sell, and trade electronics in Toronto GTA. Our policies ensure a safe, transparent, 
+            and fast experience, whether you're selling iPhones, laptops, tablets, or cameras.
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
