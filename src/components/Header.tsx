@@ -11,7 +11,7 @@ export const Header = () => {
           <img
             src="/logo2.png"
             alt="Road2Resell - We come to you for electronics"
-            className="h-20 md:h-28 w-auto"
+            className="h-40 md:h-48 w-auto"
           />
           <div className="flex flex-col">
             <div className="text-xl md:text-2xl font-bold">
