@@ -10,7 +10,7 @@ export const Header = () => {
         <div className="flex items-center space-x-3">
           <img
             src="/logo2.png"
-            alt="Road2Resell - We come t you for electronics"
+            alt="Road2Resell - We come to you for electronics"
             className="h-20 md:h-28 w-auto"
           />
           <div className="flex flex-col">
@@ -19,7 +19,7 @@ export const Header = () => {
               <span className="text-green-600">Resell</span>
             </div>
             <div className="text-xs md:text-sm text-muted-foreground font-medium">
-              Sell Electronics Right At Your Doorstep!
+               Electronics Right At Your Doorstep!
             </div>
           </div>
         </div>
