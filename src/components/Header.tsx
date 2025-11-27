@@ -19,7 +19,7 @@ export const Header = () => {
               <span className="text-green-600">Resell</span>
             </div>
             <div className="text-xs md:text-sm text-muted-foreground font-medium">
-               Electronics Right At Your Doorstep!
+              Sell Electronics Right At Your Doorstep!
             </div>
           </div>
         </div>
