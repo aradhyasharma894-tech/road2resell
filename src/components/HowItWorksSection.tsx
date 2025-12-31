@@ -13,7 +13,7 @@ export const HowItWorksSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Get cash for your electronics in Toronto GTA in three simple steps. 
-            Sell iPhones, laptops, tablets, cameras, or broken devices – we make it fast, easy, and convenient.
+            Sell iPhones, laptops, tablets, cameras – we make it fast, easy, and convenient.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const HowItWorksSection = () => {
             <p className="text-muted-foreground">
               Fill out our quick form with your device details. Include photos 
               and condition information for an accurate quote. Sell iPhones, 
-              laptops, tablets, cameras, or even broken phones in Toronto GTA.
+              laptops, tablets, cameras in Toronto GTA.
             </p>
           </div>
 

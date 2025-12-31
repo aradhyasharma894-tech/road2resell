@@ -9,7 +9,7 @@ export const QuoteFormSection = () => {
           Get Your <span className="text-primary">Free Quote</span> Today
         </h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Sell iPhones, laptops, tablets, cameras, and even broken electronics in Toronto GTA. 
+          Sell iPhones, laptops, tablets, cameras in Toronto GTA. 
           Fill in your details and upload photos directly through our secure Google Form. 
           Receive an <strong>instant cash offer</strong> and schedule doorstep pickup at your convenience.
         </p>

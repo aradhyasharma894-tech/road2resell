@@ -14,7 +14,7 @@ export const TermsSection = () => {
       title: "Seller Terms & Conditions",
       items: [
         "You must own the device – Only sell items that belong to you. Stolen, lost, or unpaid-financed devices are not accepted.",
-        "Device condition – We buy new, used, or broken electronics, including iPhones, laptops, tablets, and cameras in Toronto GTA. Items may be refused after inspection.",
+        "Device condition – We buy new or used including iPhones, laptops, tablets, and cameras in Toronto GTA. Items may be refused after inspection.",
         "Payment – Once we inspect and agree on a price, payment is made on the spot in cash. Get <strong>instant cash for electronics in Toronto</strong>.",
         "ID verification – A valid photo ID may be required. Serial numbers/IMEIs are checked to prevent fraud.",
         "No returns – Once payment is made, the device belongs to Road2Resell."
