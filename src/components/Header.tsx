@@ -61,7 +61,7 @@ export const Header = () => {
         {/* Call Now + Quote Button */}
         <div className="flex items-center space-x-4">
           <a
-            href="tel:+14374430079"
+            href="tel:+19426603737"
             className="flex items-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
           >
             <Phone className="h-5 w-5 text-primary" />

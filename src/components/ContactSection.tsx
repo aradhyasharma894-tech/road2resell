@@ -29,7 +29,7 @@ export const ContactSection = () => {
             
             <div className="flex items-center space-x-3 text-gray-300">
               <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-              <span>(437) 443-0079</span>
+              <span>(942) 660-3737</span>
             </div>
             
             <div className="flex items-center space-x-3 text-gray-300">
