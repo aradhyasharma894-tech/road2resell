@@ -40,7 +40,7 @@ export const HeroSection = () => {
                 asChild
                 variant="hero"
                 size="lg"
-                className="text-green-600"
+                className="text-lg px-10 py-5 h-auto shadow-lg hover:shadow-xl transition"
               >
                 <a
                   href="https://forms.gle/K3zg26oDVxsaXiNK9"
