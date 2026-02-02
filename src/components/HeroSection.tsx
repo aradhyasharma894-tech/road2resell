@@ -40,14 +40,14 @@ export const HeroSection = () => {
                 asChild
                 variant="hero"
                 size="lg"
-                className="text-lg px-10 py-5 h-auto shadow-lg hover:shadow-xl transition"
+                className="text-green-600"
               >
                 <a
                   href="https://forms.gle/K3zg26oDVxsaXiNK9"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  💰 Get a Free Quote Now
+                   Get a Free Quote Now
                   <ChevronDown className="ml-2 h-5 w-5" />
                 </a>
               </Button>
