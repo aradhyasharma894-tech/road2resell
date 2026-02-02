@@ -20,7 +20,7 @@ export const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                 Sell iPhones, Laptops, Tablets, Gaming Consoles & Cameras in{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-secondary font-extrabold">
                   Toronto GTA
                 </span>{" "}
                 for Instant Cash – Fast, Safe & Hassle-Free.
@@ -28,7 +28,7 @@ export const HeroSection = () => {
 
               <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Looking to <strong>sell used electronics in Toronto</strong>? 
-                We offer doorstep pickup across GTA for <strong>phones, laptops, tablets, cameras</strong> Get{" "}
+                We offer doorstep pickup across GTA for <strong>phones, laptops, tablets,gaming consoles & cameras</strong> Get{" "}
                 <strong>instant cash for electronics Toronto</strong> with secure data wiping, eco-friendly recycling, and no hidden fees. 
                 Sell phones, trade tablets, or get top cash value for your old gadgets today!
               </p>
