@@ -19,7 +19,7 @@ export const HeroSection = () => {
           <div className="space-y-10">
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                Sell iPhones, Laptops, Tablets & Cameras in{" "}
+                Sell iPhones, Laptops, Tablets, Gaming Consoles & Cameras in{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Toronto GTA
                 </span>{" "}
