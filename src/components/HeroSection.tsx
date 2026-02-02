@@ -20,7 +20,7 @@ export const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                 Sell iPhones, Laptops, Tablets, Gaming Consoles & Cameras in{" "}
-                <span className="text-green-600 font-extrabold drop-shadow-[0_4px_8px_rgba(22,163,74,0.45)]">
+                <span className="text-green-600">
                   Toronto GTA
                 </span>{" "}
                 for Instant Cash – Fast, Safe & Hassle-Free.
