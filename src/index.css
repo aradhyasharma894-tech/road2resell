@@ -200,3 +200,26 @@ img:hover {
   transform: translateY(-18px) scale(1.03);
   box-shadow: 0 25px 60px hsl(0 0% 0% / 0.55);
 }
+
+/* =========================================
+   GOOGLE REVIEWS MARQUEE (AUTO SCROLL)
+   ========================================= */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.review-marquee {
+  animation: marquee 35s linear infinite;
+  width: max-content;
+}
+
+.review-marquee:hover {
+  animation-play-state: paused;
+}
+
