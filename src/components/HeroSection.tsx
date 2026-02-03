@@ -6,12 +6,8 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white"
+      className="relative overflow-hidden bg-white !bg-white"
     >
-      {/* Decorative blur */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
-
       <div className="relative container mx-auto px-4 py-24 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
@@ -20,7 +16,7 @@ export const HeroSection = () => {
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                 Sell iPhones, Laptops, Tablets, Gaming Consoles & Cameras in{" "}
-                <span className="text-green-600">
+                <span className="text-green-600 drop-shadow-[0_4px_8px_rgba(22,163,74,0.45)]">
                   Toronto GTA
                 </span>{" "}
                 for Instant Cash – Fast, Safe & Hassle-Free.
@@ -28,9 +24,11 @@ export const HeroSection = () => {
 
               <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Looking to <strong>sell used electronics in Toronto</strong>? 
-                We offer doorstep pickup across GTA for <strong>phones, laptops, tablets,gaming consoles & cameras</strong> Get{" "}
-                <strong>instant cash for electronics Toronto</strong> with secure data wiping, eco-friendly recycling, and no hidden fees. 
-                Sell phones, trade tablets, or get top cash value for your old gadgets today!
+                We offer doorstep pickup across GTA for{" "}
+                <strong>phones, laptops, tablets, gaming consoles & cameras</strong>. Get{" "}
+                <strong>instant cash for electronics Toronto</strong> with secure data wiping,
+                eco-friendly recycling, and no hidden fees. Sell phones, trade tablets,
+                or get top cash value for your old gadgets today!
               </p>
             </div>
 
@@ -47,7 +45,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                   Get a Free Quote Now
+                  Get a Free Quote Now
                   <ChevronDown className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -72,22 +70,23 @@ export const HeroSection = () => {
                 Electronics Pickup GTA – Safe, Secure & Best Prices Guaranteed
               </h2>
               <p className="text-muted-foreground">
-                Serving Toronto & GTA – doorstep pickup, instant cash for your electronics, and hassle-free service.
+                Serving Toronto & GTA – doorstep pickup, instant cash for your electronics,
+                and hassle-free service.
               </p>
             </div>
           </div>
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
                 src={heroImage}
                 alt="Sell iPhones, laptops, tablets, cameras in Toronto GTA for instant cash"
-                className="w-full h-full object-cover scale-105"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/10 to-transparent" />
             </div>
           </div>
+
         </div>
       </div>
     </section>
