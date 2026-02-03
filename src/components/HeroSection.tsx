@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white !bg-white"
+      className="relative overflow-hidden bg-white"
     >
       <div className="relative container mx-auto px-4 py-24 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
