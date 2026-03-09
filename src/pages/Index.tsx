@@ -1,8 +1,8 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
-import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { TermsSection } from "@/components/TermsSection";
 import { ContactSection } from "@/components/ContactSection";
 
@@ -12,11 +12,11 @@ const Index = () => {
       <Header />
       <HeroSection />
 
-      
+      {/* Move form here */}
+      <QuoteFormSection />
 
       <HowItWorksSection />
       <WhyChooseUsSection />
-      <QuoteFormSection />
       <TermsSection />
       <ContactSection />
     </div>
