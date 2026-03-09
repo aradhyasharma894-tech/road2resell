@@ -3,27 +3,118 @@ import { Button } from "@/components/ui/button";
 export const QuoteFormSection = () => {
   return (
     <section id="get-quote" className="py-20 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        {/* Section Header */}
-        <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-          Get Your <span className="text-primary">Free Quote</span> Today
-        </h2>
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Sell iPhones, laptops, tablets, cameras in Toronto GTA. 
-          Fill in your details and upload photos directly through our secure Google Form. 
-          Receive an <strong>instant cash offer</strong> and schedule doorstep pickup at your convenience.
-        </p>
+      <div className="container mx-auto px-4 max-w-2xl">
 
-        {/* Quote Form Button */}
-        <a
-          href="https://forms.gle/K3zg26oDVxsaXiNK9"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            Get Your <span className="text-primary">Free Quote</span>
+          </h2>
+
+          <p className="text-lg text-muted-foreground">
+            Fill in your device details and upload photos to receive a fast
+            cash quote from our team.
+          </p>
+        </div>
+
+        {/* FORM */}
+        <form
+          action="https://formspree.io/f/myknkkld"
+          method="POST"
+          encType="multipart/form-data"
+          className="space-y-6"
         >
-          <Button variant="quote" size="lg" className="px-10 py-6 text-lg">
-            Open Quote Form
+
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+            className="w-full border border-border rounded-md p-3"
+          />
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            className="w-full border border-border rounded-md p-3"
+          />
+
+          {/* Phone (Mandatory) */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number *"
+            required
+            className="w-full border border-border rounded-md p-3"
+          />
+
+          {/* Product */}
+          <input
+            type="text"
+            name="product"
+            placeholder="Product (e.g. iPhone 13, MacBook Air M1)"
+            required
+            className="w-full border border-border rounded-md p-3"
+          />
+
+          {/* Product Condition */}
+          <div>
+            <label className="block text-sm mb-2 font-medium">
+              Product Condition
+            </label>
+
+            <select
+              name="condition"
+              required
+              className="w-full border border-border rounded-md p-3"
+            >
+              <option value="">Select Condition</option>
+              <option value="New Sealed">New Sealed</option>
+              <option value="Flawless">Flawless</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+            </select>
+          </div>
+
+          {/* Storage */}
+          <input
+            type="text"
+            name="storage"
+            placeholder="Storage Size (if applicable) e.g. 128GB"
+            className="w-full border border-border rounded-md p-3"
+          />
+
+          {/* Image Upload */}
+          <div>
+            <label className="block text-sm mb-2 font-medium">
+              Attach Product Images
+            </label>
+
+            <input
+              type="file"
+              name="attachment"
+              multiple
+              accept="image/*"
+              className="w-full"
+            />
+          </div>
+
+          {/* Hidden anti-spam */}
+          <input type="text" name="_gotcha" style={{ display: "none" }} />
+
+          {/* Submit */}
+          <Button
+            type="submit"
+            variant="hero"
+            className="w-full text-lg py-6"
+          >
+            Submit Quote Request
           </Button>
-        </a>
+
+        </form>
       </div>
     </section>
   );

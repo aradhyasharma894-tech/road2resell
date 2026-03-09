@@ -32,24 +32,28 @@ export const Header = () => {
           >
             Home
           </button>
+
           <button
             onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             How It Works
           </button>
+
           <button
-            onClick={() => window.open("https://forms.gle/K3zg26oDVxsaXiNK9", "_blank")}
+            onClick={() => document.getElementById("get-quote")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Get Quote
           </button>
+
           <button
             onClick={() => document.getElementById("terms")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Terms & Conditions
           </button>
+
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -67,10 +71,13 @@ export const Header = () => {
             <Phone className="h-5 w-5 text-primary" />
             <span>Call Now</span>
           </a>
+
           <Button
             variant="hero"
             size="sm"
-            onClick={() => window.open("https://forms.gle/K3zg26oDVxsaXiNK9", "_blank")}
+            onClick={() =>
+              document.getElementById("get-quote")?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Get Quote
           </Button>
