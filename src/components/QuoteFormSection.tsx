@@ -12,7 +12,7 @@ export const QuoteFormSection = () => {
           </h2>
 
           <p className="text-lg text-muted-foreground">
-            Fill in your device details and upload photos to receive a fast
+            Fill in your device details to receive a fast
             cash quote from our team.
           </p>
         </div>
@@ -21,7 +21,6 @@ export const QuoteFormSection = () => {
         <form
           action="https://formspree.io/f/myknkkld"
           method="POST"
-          encType="multipart/form-data"
           className="space-y-6"
         >
 
@@ -86,21 +85,6 @@ export const QuoteFormSection = () => {
             placeholder="Storage Size (if applicable) e.g. 128GB"
             className="w-full border border-border rounded-md p-3"
           />
-
-          {/* Image Upload */}
-          <div>
-            <label className="block text-sm mb-2 font-medium">
-              Attach Product Images
-            </label>
-
-            <input
-              type="file"
-              name="attachment"
-              multiple
-              accept="image/*"
-              className="w-full"
-            />
-          </div>
 
           {/* Hidden anti-spam */}
           <input type="text" name="_gotcha" style={{ display: "none" }} />
