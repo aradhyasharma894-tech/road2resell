@@ -34,22 +34,23 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-5">
+
+              {/* Get Quote Button */}
               <Button
-                asChild
                 variant="hero"
                 size="lg"
                 className="text-lg px-10 py-5 h-auto shadow-lg hover:shadow-xl transition"
+                onClick={() =>
+                  document
+                    .getElementById("get-quote")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <a
-                  href="https://forms.gle/K3zg26oDVxsaXiNK9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Get a Free Quote Now
-                  <ChevronDown className="ml-2 h-5 w-5" />
-                </a>
+                Get a Free Quote Now
+                <ChevronDown className="ml-2 h-5 w-5" />
               </Button>
 
+              {/* Learn How It Works */}
               <Button
                 variant="outline"
                 size="lg"
@@ -62,6 +63,7 @@ export const HeroSection = () => {
               >
                 Learn How It Works
               </Button>
+
             </div>
 
             {/* Trust */}
