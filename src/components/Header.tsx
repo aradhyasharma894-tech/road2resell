@@ -1,105 +1,81 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Phone } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const handleNav = (id: string) => {
+    if (location.pathname === "/") {
+      // Already on homepage → just scroll
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Go to homepage first, then scroll
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      <div className="container mx-auto flex flex-col md:flex-row h-auto md:h-20 items-center justify-between px-4 gap-3 md:gap-0">
         
         {/* Logo */}
-        <div
-          className="flex items-center space-x-2 cursor-pointer"
-          onClick={() => navigate("/")}
-        >
+        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate("/")}>
           <img
             src="/logo2.png"
             alt="Road2Resell"
-            className="h-10 md:h-14 w-auto"   // 🔥 FIXED SIZE
+            className="h-40 md:h-48 w-auto"
           />
-          <div className="flex flex-col leading-tight">
-            <div className="text-base md:text-xl font-bold">
+          <div className="flex flex-col">
+            <div className="text-xl md:text-2xl font-bold">
               <span className="text-black">Road2</span>
               <span className="text-green-600">Resell</span>
             </div>
-            <div className="text-[10px] md:text-xs text-muted-foreground">
-              Sell Electronics Doorstep
+            <div className="text-xs md:text-sm text-muted-foreground font-medium">
+              Sell Electronics Right At Your Doorstep!
             </div>
           </div>
         </div>
 
-        {/* Desktop Nav */}
+        {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <button onClick={() => navigate("/")} className="nav-btn">
+          <button onClick={() => handleNav("home")} className="nav-btn">
             Home
           </button>
-          <button onClick={() => navigate("/how-it-works")} className="nav-btn">
+
+          <button onClick={() => handleNav("how-it-works")} className="nav-btn">
             How It Works
           </button>
-          <button onClick={() => navigate("/get-quote")} className="nav-btn">
+
+          <button onClick={() => handleNav("get-quote")} className="nav-btn">
             Get Quote
           </button>
-          <button onClick={() => navigate("/terms")} className="nav-btn">
-            Terms
+
+          <button onClick={() => handleNav("terms")} className="nav-btn">
+            Terms & Conditions
           </button>
-          <button onClick={() => navigate("/contact")} className="nav-btn">
+
+          <button onClick={() => handleNav("contact")} className="nav-btn">
             Contact
           </button>
         </nav>
 
-        {/* Right Side */}
-        <div className="flex items-center space-x-3">
-          {/* Call (hide on small screens if needed) */}
+        {/* Actions */}
+        <div className="flex items-center space-x-4">
           <a
             href="tel:+19426603737"
-            className="hidden sm:flex items-center space-x-1 text-sm"
+            className="flex items-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
           >
-            <Phone className="h-4 w-4 text-green-600" />
+            <Phone className="h-5 w-5 text-green-600" />
+            <span>Call Now</span>
           </a>
 
-          {/* Button */}
-          <Button
-            size="sm"
-            onClick={() => navigate("/get-quote")}
-            className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 text-xs md:text-sm"
-          >
-            Quote
+          <Button size="sm" onClick={() => handleNav("get-quote")} className="bg-green-600 hover:bg-green-700 text-white">
+            Get Quote
           </Button>
-
-          {/* Hamburger */}
-          <button
-            className="md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
-
-      {/* 🔥 Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-4 space-y-4">
-          <button onClick={() => {navigate("/"); setMenuOpen(false);}} className="block w-full text-left">
-            Home
-          </button>
-          <button onClick={() => {navigate("/how-it-works"); setMenuOpen(false);}} className="block w-full text-left">
-            How It Works
-          </button>
-          <button onClick={() => {navigate("/get-quote"); setMenuOpen(false);}} className="block w-full text-left">
-            Get Quote
-          </button>
-          <button onClick={() => {navigate("/terms"); setMenuOpen(false);}} className="block w-full text-left">
-            Terms & Conditions
-          </button>
-          <button onClick={() => {navigate("/contact"); setMenuOpen(false);}} className="block w-full text-left">
-            Contact
-          </button>
-        </div>
-      )}
     </header>
   );
 };
