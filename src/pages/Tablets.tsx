@@ -217,7 +217,7 @@ const Phones = () => {
             "Richmond Hill",
             "Pickering",
           ].map((city, i) => (
-            <p key={i}>Sell Laptop for Cash in {city}</p>
+            <p key={i}>Sell Tablets for Cash in {city}</p>
           ))}
         </div>
 

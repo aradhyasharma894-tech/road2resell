@@ -189,7 +189,7 @@ const Phones = () => {
             "Richmond Hill",
             "Pickering",
           ].map((city, i) => (
-            <p key={i}>Sell Laptop for Cash in {city}</p>
+            <p key={i}>Sell Gaming Consoles for Cash in {city}</p>
           ))}
         </div>
 
@@ -205,7 +205,7 @@ const Phones = () => {
       <section className="bg-gray-100 py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-black text-center mb-12">
-            Camera & Gears FAQs in Toronto &{" "}
+            GAMING CONSOLES FAQs in Toronto &{" "}
             <span className="text-green-600">GTA</span>
           </h2>
 
@@ -216,7 +216,7 @@ const Phones = () => {
             },
             {
               q: "Which is the best place to sell Video Games near me?",
-              a: "Road2Resell is the best place to sell your DSLR in Toronto & the GTA with top cash offers, fast payment, and free pickup.",
+              a: "Road2Resell is the best place to sell your PS5 in Toronto & the GTA with top cash offers, fast payment, and free pickup.",
             },
             {
               q: "How fast will I get paid?",
