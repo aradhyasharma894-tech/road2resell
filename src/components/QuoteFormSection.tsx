@@ -8,7 +8,7 @@ export const QuoteFormSection = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Get Your <span className="text-primary">Free Quote</span>
+            Get Your <span className="text-green-600">Free Quote</span>
           </h2>
 
           <p className="text-lg text-muted-foreground">
@@ -92,8 +92,7 @@ export const QuoteFormSection = () => {
           {/* Submit */}
           <Button
             type="submit"
-            variant="hero"
-            className="w-full text-lg py-6"
+            className="w-full text-lg py-6 bg-green-600 text-white hover:bg-green-700"
           >
             Submit Quote Request
           </Button>
