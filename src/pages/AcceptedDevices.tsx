@@ -4,15 +4,15 @@ import Footer from "@/components/Footer";
 
 
 const devices = [
-  { name: "Phones", image: "/images/phones.jpg", path: "/phones" },
-  { name: "Laptops", image: "/images/laptops.jpg", path: "/laptops" },
-  { name: "Tablets", image: "/images/tablets.jpg", path: "/tablets" },
-  { name: "Gaming Consoles", image: "/images/gaming.jpg", path: "/gaming-consoles" },
-  { name: "Cameras", image: "/images/cameras.jpg", path: "/cameras" },
-  { name: "Drones", image: "/images/drones.jpg", path: "/drones" },
-  { name: "Smart Watches", image: "/images/watches.jpg", path: "/smart-watches" },
-  { name: "Headphones", image: "/images/headphones.jpg", path: "/headphones" },
-  { name: "Other Devices", image: "/images/others.jpg", path: "/other-devices" },
+  { name: "Sell Phones for Cash", image: "/images/phones.jpg", path: "/phones" },
+  { name: "Sell Laptops for Cash", image: "/images/laptops.jpg", path: "/laptops" },
+  { name: "Sell Tablets for Cash", image: "/images/tablets.jpg", path: "/tablets" },
+  { name: "Sell Gaming Consoles for Cash", image: "/images/gaming.jpg", path: "/gaming-consoles" },
+  { name: "Sell Cameras for Cash", image: "/images/cameras.jpg", path: "/cameras" },
+  { name: "Sell Drones for Cash", image: "/images/drones.jpg", path: "/drones" },
+  { name: "Sell Smart Watches for Cash", image: "/images/watches.jpg", path: "/smart-watches" },
+  { name: "Sell Headphones for Cash", image: "/images/headphones.jpg", path: "/headphones" },
+  { name: "Sell Other Devices for Cash", image: "/images/others.jpg", path: "/other-devices" },
 ];
 
 const AcceptedDevices = () => {

@@ -92,6 +92,17 @@ const Phones = () => {
                 ASUS.
               </p>
             </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <img
+                src="/images/gc.png"
+                className="h-16 mx-auto mb-4 object-contain"
+              />
+              <h3 className="font-bold text-lg mb-3">Sell Gaming PC</h3>
+              <p className="text-gray-600 text-sm">
+                We buy Gaming PC of major brands for Cash.
+              </p>
+            </div>
+
           </div>
 
           <p className="mt-10 text-gray-600">
