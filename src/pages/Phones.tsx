@@ -15,7 +15,7 @@ const Phones = () => {
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 className="text-6xl font-black leading-tight text-black">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight text-black">
             Sell Smartphone <br />
             for <span className="text-green-600">Cash</span> in{" "}
             <span className="text-green-600">Toronto</span>
