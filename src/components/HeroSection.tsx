@@ -1,11 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-electronics.jpg";
-import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
-  const navigate = useNavigate();
-
   return (
     <section id="home" className="relative overflow-hidden bg-white">
       <div className="relative container mx-auto px-4 py-24 lg:py-36">
@@ -33,9 +30,8 @@ export const HeroSection = () => {
 
               {/* Get Quote Button */}
               <Button
-                
                 size="lg"
-                className="text-lg px-10 py-5 h-auto bg-green-600 shadow-lg hover:shadow-xl transition"
+                className="text-lg px-6 py-3 sm:px-8 sm:py-4 h-auto bg-green-600 text-white shadow-lg hover:shadow-xl hover:bg-green-700 transition"
                 onClick={() =>
                   document
                     .getElementById("get-quote")
@@ -46,15 +42,13 @@ export const HeroSection = () => {
                 <ChevronDown className="ml-2 h-5 w-5" />
               </Button>
 
-              {/* NEW BUTTON (REPLACED) */}
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-10 py-5 h-auto border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition"
-                onClick={() => navigate("/accepted-devices")}
+              {/* CALL BUTTON */}
+              <a
+                href="tel:+19426603737"
+                className="text-lg px-6 py-3 sm:px-8 sm:py-4 border border-green-600 text-green-600 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition text-center"
               >
-                Sell Tech for Cash
-              </Button>
+                Call Us
+              </a>
 
             </div>
 
