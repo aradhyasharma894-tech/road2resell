@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 import Index from "./pages/Index";
 import AcceptedDevices from "./pages/AcceptedDevices";
@@ -20,32 +21,36 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/accepted-devices" element={<AcceptedDevices />} />
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
 
-          {/* Category Pages */}
-          <Route path="/phones" element={<Phones />} />
-          <Route path="/laptops" element={<Laptops />} />
-          <Route path="/tablets" element={<Tablets />} />
-          <Route path="/gaming-consoles" element={<GamingConsoles />} />
-          <Route path="/cameras" element={<Cameras />} />
-          <Route path="/drones" element={<Drones />} />
-          <Route path="/smart-watches" element={<SmartWatches />} />
-          <Route path="/headphones" element={<Headphones />} />
-          <Route path="/other-devices" element={<OtherDevices />} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/accepted-devices" element={<AcceptedDevices />} />
 
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+            {/* Category Pages */}
+            <Route path="/phones" element={<Phones />} />
+            <Route path="/laptops" element={<Laptops />} />
+            <Route path="/tablets" element={<Tablets />} />
+            <Route path="/gaming-consoles" element={<GamingConsoles />} />
+            <Route path="/cameras" element={<Cameras />} />
+            <Route path="/drones" element={<Drones />} />
+            <Route path="/smart-watches" element={<SmartWatches />} />
+            <Route path="/headphones" element={<Headphones />} />
+            <Route path="/other-devices" element={<OtherDevices />} />
+
+            {/* Catch-all */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

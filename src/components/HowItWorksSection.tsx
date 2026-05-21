@@ -52,6 +52,7 @@ export const HowItWorksSection = () => {
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
               src={images[current]}
+              loading="lazy"
               alt="How Road2Resell works"
               className="w-full h-auto object-contain transition-all duration-500"
             />
