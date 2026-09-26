@@ -10,21 +10,57 @@ const Laptops = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const laptopFaqs = [
+    {
+      q: "Where can I sell my MacBook for cash in Toronto?",
+      a: "Road2Resell buys MacBook Air, MacBook Pro and other MacBook models for cash in Toronto and across the GTA. Submit your device details through our quote form to get started.",
+    },
+    {
+      q: "Can I sell my MacBook Air or MacBook Pro?",
+      a: "Yes. Road2Resell buys MacBook Air and MacBook Pro models. Include the model, year, chip, RAM, storage and condition when requesting a quote.",
+    },
+    {
+      q: "Where can I sell a used MacBook in Toronto?",
+      a: "You can sell your used MacBook through Road2Resell without visiting a store. We provide doorstep service across Toronto and GTA locations.",
+    },
+    {
+      q: "Can I sell my gaming PC for cash in Toronto?",
+      a: "Yes. Road2Resell buys gaming PCs and custom gaming computer setups. Provide the CPU, GPU, RAM, storage and overall condition for an accurate quote.",
+    },
+    {
+      q: "Which laptop brands do you buy?",
+      a: "We buy Apple MacBooks as well as laptops from Dell, HP, Lenovo, ASUS, Acer, MSI, Razer and other major brands.",
+    },
+    {
+      q: "How quickly do I get paid for my laptop or MacBook?",
+      a: "After the device is collected and inspected, payment can be made in cash or by e-transfer according to the agreed transaction.",
+    },
+  ];
+
+  const faqSchema = laptopFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  }));
+
   return (
     <>
       <Helmet>
         <title>
-          Sell Laptops & MacBooks for Cash in Toronto & GTA | Road2Resell
+          Sell MacBook, Laptops & Gaming PCs for Cash in Toronto | Road2Resell
         </title>
 
         <meta
           name="description"
-          content="Sell MacBooks, gaming laptops, Dell, HP, Lenovo, ASUS, Acer, MSI and more for top cash in Toronto & GTA. Free pickup and instant payment."
+          content="Sell MacBook Air, MacBook Pro, laptops and gaming PCs for cash in Toronto & GTA. We buy Apple, Dell, HP, Lenovo, ASUS, Acer, MSI and more."
         />
 
         <meta
           name="keywords"
-          content="sell laptop Toronto, sell MacBook Toronto, gaming laptop buyer GTA, cash for laptops Toronto, sell gaming PC Toronto"
+          content="sell MacBook Toronto, sell MacBook for cash Toronto, sell MacBook Air Toronto, sell MacBook Pro Toronto, sell used MacBook Toronto, MacBook buyer Toronto, sell laptop Toronto, sell laptops for cash Toronto, laptop buyer Toronto, sell gaming PC Toronto, sell gaming computer Toronto, gaming PC buyer Toronto, cash for laptops Toronto"
         />
 
         <link
@@ -34,12 +70,12 @@ const Laptops = () => {
 
         <meta
           property="og:title"
-          content="Sell Laptops & MacBooks for Cash in Toronto & GTA | Road2Resell"
+          content="Sell MacBook, Laptops & Gaming PCs for Cash in Toronto | Road2Resell"
         />
 
         <meta
           property="og:description"
-          content="Get top cash for laptops, MacBooks, gaming laptops and gaming PCs with free pickup across Toronto & GTA."
+          content="Sell MacBook Air, MacBook Pro, laptops and gaming PCs for cash in Toronto & GTA. Get a quote and doorstep service from Road2Resell."
         />
 
         <meta
@@ -51,6 +87,74 @@ const Laptops = () => {
           property="og:url"
           content="https://road2resell.ca/laptops"
         />
+
+        <meta
+          property="og:image"
+          content="https://road2resell.ca/images/macbook.jpg"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://road2resell.ca/laptops",
+                url: "https://road2resell.ca/laptops",
+                name: "Sell MacBook, Laptops & Gaming PCs for Cash in Toronto",
+                description:
+                  "Sell MacBook Air, MacBook Pro, laptops and gaming PCs for cash in Toronto and GTA.",
+                inLanguage: "en-CA",
+                isPartOf: {
+                  "@type": "WebSite",
+                  name: "Road2Resell",
+                  url: "https://road2resell.ca/",
+                },
+              },
+              {
+                "@type": "LocalBusiness",
+                name: "Road2Resell",
+                url: "https://road2resell.ca/",
+                email: "road2reselltoronto@gmail.com",
+                areaServed: [
+                  "Toronto",
+                  "Brampton",
+                  "North York",
+                  "Scarborough",
+                  "Etobicoke",
+                  "Mississauga",
+                  "Vaughan",
+                  "Markham",
+                  "Richmond Hill",
+                  "Pickering",
+                ],
+                description:
+                  "Road2Resell buys laptops, MacBooks, gaming PCs and other electronics for cash across Toronto and the GTA.",
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://road2resell.ca/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Laptops & MacBooks",
+                    item: "https://road2resell.ca/laptops",
+                  },
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: faqSchema,
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="bg-white min-h-screen">
@@ -59,19 +163,28 @@ const Laptops = () => {
         {/* HERO */}
         <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
+            <p className="text-green-600 font-bold uppercase tracking-wide mb-4">
+              Toronto & GTA Laptop Buyer
+            </p>
+
             <h1 className="text-6xl font-black leading-tight text-black">
-              Sell Laptop, MacBook & Gaming PC <br />
-              for <span className="text-green-600">Top Cash</span> in{" "}
-              <span className="text-green-600">Toronto</span>
+              Sell MacBook, Laptops & Gaming PCs{" "}
+              <span className="text-green-600">for Cash</span> in Toronto &
+              GTA
             </h1>
 
-            <p className="mt-6 text-gray-600 text-lg">
-              Sell your laptop for cash with Road2Resell. Get cash for{" "}
-              <strong>
-                Apple MacBook and brands like Dell, Acer, MSI, Razer, HP,
-                Lenovo & Asus.
-              </strong>{" "}
-              No store visits. We come to you and pay you cash.
+            <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+              Looking to <strong>sell your MacBook in Toronto</strong>? Road2Resell
+              buys <strong>MacBook Air, MacBook Pro, Windows laptops and gaming
+              PCs</strong> for cash across Toronto and the GTA. Tell us your
+              device model and condition, get a quote, and avoid the hassle of
+              visiting a store.
+            </p>
+
+            <p className="mt-4 text-gray-600">
+              We buy Apple, Dell, HP, Lenovo, ASUS, Acer, MSI, Razer and other
+              major laptop brands. We also buy custom{" "}
+              <strong>gaming computers and gaming PCs</strong>.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -79,7 +192,7 @@ const Laptops = () => {
                 onClick={scrollToForm}
                 className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
               >
-                Get a Quote
+                Get a Laptop Quote
               </button>
 
               <a
@@ -94,106 +207,245 @@ const Laptops = () => {
           <img
             src="/images/macbook.jpg"
             loading="lazy"
-            alt="Sell laptops and MacBooks for cash in Toronto GTA"
+            alt="Sell MacBook and laptops for cash in Toronto and GTA"
             className="rounded-xl w-full object-cover"
           />
         </section>
 
-        {/* WE PAY CASH FOR */}
+        {/* DEVICE TYPES */}
         <section className="bg-gray-100 py-20">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-black mb-12">
-              We Pay <span className="text-green-600">Cash</span> For:
-            </h2>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-green-600 font-bold uppercase tracking-wide">
+                What We Buy
+              </p>
 
-            <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+              <h2 className="text-4xl font-black mt-2">
+                Sell Your <span className="text-green-600">MacBook, Laptop</span>{" "}
+                or Gaming PC
+              </h2>
 
+              <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+                Get a quote for your used laptop, MacBook or gaming computer.
+                Providing accurate specifications helps us assess your device
+                and prepare an offer.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* MACBOOK */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <img
                   src="/images/apple.png"
                   loading="lazy"
-                  alt="Sell MacBook Toronto"
-                  className="h-16 mx-auto mb-4 object-contain"
+                  alt="Sell MacBook Air and MacBook Pro in Toronto"
+                  className="h-16 mx-auto mb-5 object-contain"
                 />
 
-                <h3 className="font-bold text-lg mb-3">
-                  Sell MacBook
+                <h3 className="font-bold text-xl mb-3 text-center">
+                  Sell MacBook Air & MacBook Pro
                 </h3>
 
-                <p className="text-gray-600 text-sm">
-                  We buy all MacBook models from 2015 onwards. Sell Apple devices
-                  for top cash with free pickup in Toronto & GTA.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Sell your{" "}
+                  <strong>MacBook Air or MacBook Pro</strong> for cash in
+                  Toronto. Include the model year, Apple chip or processor,
+                  RAM, storage and condition when requesting a quote.
                 </p>
+
+                <ul className="mt-5 text-sm text-gray-600 space-y-2">
+                  <li>✓ MacBook Air</li>
+                  <li>✓ MacBook Pro</li>
+                  <li>✓ Apple Silicon & Intel models</li>
+                  <li>✓ Different RAM & storage configurations</li>
+                </ul>
               </div>
 
+              {/* LAPTOPS */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <img
                   src="/images/laptop1.png"
                   loading="lazy"
-                  alt="Sell laptop Toronto"
-                  className="h-16 mx-auto mb-4 object-contain"
+                  alt="Sell used laptops for cash in Toronto"
+                  className="h-16 mx-auto mb-5 object-contain"
                 />
 
-                <h3 className="font-bold text-lg mb-3">
-                  Sell Laptop & Gaming PC
+                <h3 className="font-bold text-xl mb-3 text-center">
+                  Sell Used Laptops
                 </h3>
 
-                <p className="text-gray-600 text-sm">
-                  We buy laptops and gaming PCs of major brands including Dell,
-                  Acer, MSI, HP, Lenovo, ASUS and more.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  We buy laptops from{" "}
+                  <strong>Dell, HP, Lenovo, ASUS, Acer, MSI, Razer</strong> and
+                  other major manufacturers. Business, personal and performance
+                  laptops may qualify.
                 </p>
+
+                <ul className="mt-5 text-sm text-gray-600 space-y-2">
+                  <li>✓ Dell & HP laptops</li>
+                  <li>✓ Lenovo & ASUS laptops</li>
+                  <li>✓ Acer & MSI laptops</li>
+                  <li>✓ Razer and other brands</li>
+                </ul>
               </div>
 
+              {/* GAMING PC */}
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <img
                   src="/images/gc.png"
                   loading="lazy"
-                  alt="Sell gaming PC Toronto"
-                  className="h-16 mx-auto mb-4 object-contain"
+                  alt="Sell gaming PC for cash in Toronto"
+                  className="h-16 mx-auto mb-5 object-contain"
                 />
 
-                <h3 className="font-bold text-lg mb-3">
-                  Sell Gaming PC
+                <h3 className="font-bold text-xl mb-3 text-center">
+                  Sell Gaming PCs
                 </h3>
 
-                <p className="text-gray-600 text-sm">
-                  We buy gaming PCs and custom setups for top cash in Toronto &
-                  GTA.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Selling a{" "}
+                  <strong>gaming PC or custom gaming computer</strong>? Tell
+                  us the CPU, graphics card, RAM, storage and condition so we
+                  can evaluate the setup.
+                </p>
+
+                <ul className="mt-5 text-sm text-gray-600 space-y-2">
+                  <li>✓ Custom gaming PCs</li>
+                  <li>✓ Gaming desktops</li>
+                  <li>✓ Dedicated graphics cards</li>
+                  <li>✓ Performance gaming setups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* MACBOOK + GAMING PC SEARCH INTENT */}
+        <section className="py-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-10">
+              <div className="border rounded-xl p-8">
+                <h2 className="text-3xl font-black mb-4">
+                  Sell MacBook for Cash in Toronto
+                </h2>
+
+                <p className="text-gray-600 leading-relaxed">
+                  Whether you have a{" "}
+                  <strong>MacBook Air, MacBook Pro or another MacBook</strong>,
+                  Road2Resell provides a straightforward way to sell your used
+                  Apple laptop in Toronto and the GTA. For a faster quote,
+                  provide the model, year, processor or Apple chip, RAM,
+                  storage and physical condition.
                 </p>
               </div>
 
-            </div>
+              <div className="border rounded-xl p-8">
+                <h2 className="text-3xl font-black mb-4">
+                  Sell Gaming PC for Cash in Toronto
+                </h2>
 
-            <p className="mt-10 text-gray-600">
-              All other major brands may also be eligible for top cash offers.
-            </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Have a gaming desktop you no longer need? We buy{" "}
+                  <strong>gaming PCs and custom gaming computers</strong>.
+                  Include the CPU, GPU, RAM, SSD/HDD storage and overall
+                  condition when submitting your quote request.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* FORM */}
         <div id="quote-form" className="max-w-5xl mx-auto px-6 py-20">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-black">
+              Get a Quote for Your{" "}
+              <span className="text-green-600">Laptop or MacBook</span>
+            </h2>
+
+            <p className="text-gray-600 mt-4">
+              Tell us what you're selling and we'll review your device details.
+            </p>
+          </div>
+
           <QuoteFormSection />
         </div>
+
+        {/* WHAT AFFECTS VALUE */}
+        <section className="bg-gray-100 py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-black">
+                What We Consider When Evaluating Your{" "}
+                <span className="text-green-600">Device</span>
+              </h2>
+
+              <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+                Device specifications and condition can affect the offer.
+                Providing complete information helps us assess your laptop,
+                MacBook or gaming PC.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "Model & Year",
+                  desc: "The exact laptop, MacBook or gaming PC model and generation.",
+                },
+                {
+                  title: "Processor",
+                  desc: "Apple Silicon, Intel, AMD or other processor information.",
+                },
+                {
+                  title: "RAM & Storage",
+                  desc: "Memory capacity and SSD or HDD storage configuration.",
+                },
+                {
+                  title: "Condition",
+                  desc: "Physical condition, functionality, screen and overall working condition.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white p-7 rounded-xl shadow-sm"
+                >
+                  <h3 className="font-bold text-lg mb-3">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* QUALIFICATION */}
         <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-black mb-6">
-              Qualification <span className="text-green-600">Criteria</span>
+              Laptop & MacBook{" "}
+              <span className="text-green-600">Qualification</span>
             </h2>
 
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Before selling your device, make sure it is ready for transfer
+              and evaluation.
+            </p>
+
             <ul className="space-y-4 text-gray-800 font-medium">
-              <li>✔ Good Physical Condition</li>
-              <li>✔ Powers on and functional</li>
-              <li>✔ Remove all iCloud, BIOS and firmware locks before sale</li>
+              <li>✔ Good physical condition</li>
+              <li>✔ Powers on and is functional</li>
+              <li>✔ Remove iCloud, BIOS and firmware locks</li>
               <li>✔ Devices must not be blacklisted or reported</li>
+              <li>✔ Include accurate model and specification information</li>
             </ul>
           </div>
 
           <img
             src="/images/person2.jpg"
             loading="lazy"
-            alt="Sell laptops for cash in Toronto GTA"
+            alt="Sell laptops and MacBooks for cash in Toronto GTA"
             className="rounded-xl w-full object-cover"
           />
         </section>
@@ -202,26 +454,26 @@ const Laptops = () => {
         <section className="bg-gray-100 py-20 text-center">
           <h2 className="text-4xl font-black mb-16">
             How to{" "}
-            <span className="text-green-600">Sell & Get Paid?</span>
+            <span className="text-green-600">Sell Your Laptop</span>
           </h2>
 
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
             {[
               {
-                title: "Send Laptop Details",
-                desc: "Submit your MacBook or laptop model and condition via call or our quick quote form.",
+                title: "Send Device Details",
+                desc: "Submit your MacBook, laptop or gaming PC model, specifications and condition.",
               },
               {
-                title: "Fast Offer",
-                desc: "Get a high-value cash offer within minutes based on current electronics market rates.",
+                title: "Receive an Offer",
+                desc: "We review the information you provide and prepare a cash offer.",
               },
               {
                 title: "Doorstep Pickup",
-                desc: "No store visits, we come to you.",
+                desc: "No store visit required. We come to you across supported GTA locations.",
               },
               {
-                title: "Instant Cash",
-                desc: "Get paid on the spot in cash or e-transfer.",
+                title: "Get Paid",
+                desc: "Payment is made after collection and inspection according to the agreed transaction.",
               },
             ].map((step, i) => (
               <div key={i}>
@@ -231,7 +483,9 @@ const Laptops = () => {
 
                 <p className="font-bold">{step.title}</p>
 
-                <p className="text-gray-600 text-sm mt-2">{step.desc}</p>
+                <p className="text-gray-600 text-sm mt-2">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -240,11 +494,16 @@ const Laptops = () => {
         {/* SERVICE LOCATIONS */}
         <section className="py-20 text-center">
           <h2 className="text-4xl font-black mb-8">
-            Service Locations –{" "}
-            <span className="text-green-600">We Come To You</span>
+            Sell Laptops & MacBooks Across{" "}
+            <span className="text-green-600">Toronto & GTA</span>
           </h2>
 
-          <div className="text-gray-800 space-y-2 font-medium">
+          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
+            Road2Resell provides laptop, MacBook and gaming PC buying services
+            across Toronto and surrounding GTA communities.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-3 max-w-5xl mx-auto text-gray-800 font-medium">
             {[
               "Toronto",
               "Brampton",
@@ -257,44 +516,45 @@ const Laptops = () => {
               "Richmond Hill",
               "Pickering",
             ].map((city, i) => (
-              <p key={i}>Sell Laptop for Cash in {city}</p>
+              <div
+                key={i}
+                className="border rounded-lg px-4 py-3"
+              >
+                Sell Laptop in {city}
+              </div>
             ))}
           </div>
 
           <button
             onClick={scrollToForm}
-            className="mt-8 bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+            className="mt-10 bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
           >
-            Get Quote
+            Get My Laptop Quote
           </button>
         </section>
 
         {/* RELATED DEVICES */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-6">
-
             <h2 className="text-3xl font-black text-center mb-10">
-              Related <span className="text-green-600">Devices</span>
+              Sell Other{" "}
+              <span className="text-green-600">Devices</span>
             </h2>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-
               {[
                 {
                   name: "Sell Phones",
                   path: "/phones",
                 },
-
                 {
                   name: "Sell Gaming Consoles",
                   path: "/gaming-consoles",
                 },
-
                 {
                   name: "Sell Tablets",
                   path: "/tablets",
                 },
-
                 {
                   name: "Sell Other Devices",
                   path: "/other-devices",
@@ -308,7 +568,6 @@ const Laptops = () => {
                   {item.name}
                 </a>
               ))}
-
             </div>
           </div>
         </section>
@@ -317,38 +576,42 @@ const Laptops = () => {
         <section className="bg-gray-100 py-20">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl font-black text-center mb-12">
-              Laptop & MacBook FAQs in Toronto &{" "}
-              <span className="text-green-600">GTA</span>
+              MacBook, Laptop & Gaming PC{" "}
+              <span className="text-green-600">FAQs</span>
             </h2>
 
-            {[
-              {
-                q: "Where can I sell my Laptop & MacBook for cash in Toronto?",
-                a: "Road2Resell is the easiest way to sell laptops and MacBooks for cash in Toronto and across the GTA.",
-              },
-              {
-                q: "Which is the best place to sell MacBook near me?",
-                a: "Road2Resell offers top cash offers, fast payment and free pickup.",
-              },
-              {
-                q: "How fast will I get paid?",
-                a: "Payment is instant cash once we collect your Laptop or MacBook.",
-              },
-              {
-                q: "Where can I sell my gaming laptop for cash in Toronto?",
-                a: "Road2Resell buys gaming laptops and gaming PCs with free pickup across GTA.",
-              },
-            ].map((item, i) => (
+            {laptopFaqs.map((item, i) => (
               <div
                 key={i}
                 className="bg-white p-6 rounded-xl mb-4 shadow-sm"
               >
                 <h3 className="font-bold mb-2">{item.q}</h3>
 
-                <p className="text-gray-600 text-sm">{item.a}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="py-20 bg-black text-white text-center px-6">
+          <h2 className="text-4xl font-black">
+            Ready to Sell Your MacBook, Laptop or Gaming PC?
+          </h2>
+
+          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+            Get started with Road2Resell and submit your device details for a
+            quote in Toronto and the GTA.
+          </p>
+
+          <button
+            onClick={scrollToForm}
+            className="mt-8 bg-green-600 text-white px-10 py-4 rounded-lg font-bold hover:bg-green-700 transition"
+          >
+            Get a Quote
+          </button>
         </section>
 
         <Footer />
