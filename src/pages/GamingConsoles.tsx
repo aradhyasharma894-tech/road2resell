@@ -122,6 +122,7 @@ const GamingConsoles = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <button
+                type="button"
                 onClick={scrollToForm}
                 className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
               >
@@ -289,6 +290,41 @@ const GamingConsoles = () => {
           </div>
         </section>
 
+        {/* CONVERSION CTA */}
+        <section className="bg-green-50 border-y border-green-100 py-10">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <p className="text-green-700 font-bold uppercase tracking-wide text-sm">
+              Ready to sell your console?
+            </p>
+
+            <h2 className="text-3xl sm:text-4xl font-black text-black mt-2">
+              Get Your Gaming Console Quote
+            </h2>
+
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Tell us about your PS5, Xbox, Nintendo Switch or other gaming
+              console. Get started online or speak with Road2Resell directly.
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+              <button
+                type="button"
+                onClick={scrollToForm}
+                className="bg-green-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-green-700 transition"
+              >
+                Get a Console Quote
+              </button>
+
+              <a
+                href="tel:+19426603737"
+                className="border-2 border-green-600 text-green-700 px-8 py-3 rounded-lg font-bold hover:bg-green-600 hover:text-white transition"
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* FORM */}
         <div id="quote-form" className="max-w-5xl mx-auto px-6 py-20">
           <QuoteFormSection />
@@ -437,6 +473,7 @@ const GamingConsoles = () => {
           </div>
 
           <button
+            type="button"
             onClick={scrollToForm}
             className="mt-8 bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
           >
@@ -546,6 +583,7 @@ const GamingConsoles = () => {
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
+                type="button"
                 onClick={scrollToForm}
                 className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
               >
@@ -563,6 +601,27 @@ const GamingConsoles = () => {
         </section>
 
         <Footer />
+      </div>
+
+      {/* MOBILE STICKY CONVERSION BAR
+          Hidden on sm and larger screens, so laptop/desktop layout is unchanged. */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-[0_-4px_15px_rgba(0,0,0,0.10)] p-3 sm:hidden">
+        <div className="flex gap-2 max-w-lg mx-auto">
+          <button
+            type="button"
+            onClick={scrollToForm}
+            className="flex-1 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition-colors"
+          >
+            Get Cash Quote
+          </button>
+
+          <a
+            href="tel:+19426603737"
+            className="flex-1 bg-black hover:bg-gray-800 active:bg-gray-700 text-white font-bold py-3 px-4 rounded-xl text-sm text-center rounded-xl transition-colors"
+          >
+            Call Now
+          </a>
+        </div>
       </div>
     </>
   );

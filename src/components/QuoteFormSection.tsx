@@ -92,21 +92,53 @@ export const QuoteFormSection = ({
       <div className="container mx-auto px-4 max-w-2xl">
 
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center rounded-full bg-green-50 border border-green-200 px-4 py-2 mb-4">
+            <span className="text-sm font-semibold text-green-700">
+              Fast • Free • No obligation
+            </span>
+          </div>
+
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Get Your{" "}
-            <span className="text-green-600">Free Quote</span>
+            <span className="text-green-600">Free Cash Quote</span>
           </h2>
 
           <p className="text-lg text-muted-foreground">
-            Fill in your device details to receive a fast
-            cash quote from our team.
+            Tell us about your device and our team will review your details
+            and contact you with a quote.
           </p>
+
+          <p className="text-sm text-gray-500 mt-3">
+            Takes less than 30 seconds to submit.
+          </p>
+        </div>
+
+        {/* Direct call option */}
+        <div className="mb-8 rounded-xl border border-green-200 bg-green-50 p-5 text-center">
+          <p className="font-semibold text-gray-800">
+            Prefer to speak with us directly?
+          </p>
+
+          <p className="text-sm text-gray-600 mt-1 mb-3">
+            Call Road2Resell and tell us what device you're selling.
+          </p>
+
+          <a
+            href="tel:+19426603737"
+            className="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700 transition"
+          >
+            Call Us Now
+          </a>
         </div>
 
         {/* SUCCESS */}
         {submitted ? (
-          <div className="rounded-lg border border-green-200 bg-green-50 p-8 text-center">
+          <div className="rounded-xl border border-green-200 bg-green-50 p-8 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-600 text-white text-2xl">
+              ✓
+            </div>
+
             <h3 className="text-2xl font-bold text-green-700 mb-3">
               Quote Request Received!
             </h3>
@@ -116,60 +148,101 @@ export const QuoteFormSection = ({
               and contact you shortly.
             </p>
 
-            <Button
-              type="button"
-              className="mt-6 bg-green-600 text-white hover:bg-green-700"
-              onClick={() => {
-                setSubmitted(false);
-                setProduct(selectedConsole);
-                setCondition(selectedCondition);
-              }}
+            <p className="text-sm text-gray-600 mt-3">
+              If you would rather speak with us directly, you can also call us.
+            </p>
+
+            <a
+              href="tel:+19426603737"
+              className="inline-flex mt-5 rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700 transition"
             >
-              Submit Another Quote
-            </Button>
+              Call Road2Resell
+            </a>
+
+            <div>
+              <Button
+                type="button"
+                className="mt-4 bg-white text-green-700 border border-green-600 hover:bg-green-50"
+                onClick={() => {
+                  setSubmitted(false);
+                  setProduct(selectedConsole);
+                  setCondition(selectedCondition);
+                }}
+              >
+                Submit Another Quote
+              </Button>
+            </div>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="space-y-6"
+            className="space-y-5"
           >
 
             {/* Name */}
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              required
-              className="w-full border border-border rounded-md p-3"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Your Name
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                className="w-full border border-border rounded-md p-3"
+              />
+            </div>
 
             {/* Email */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              className="w-full border border-border rounded-md p-3"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Email <span className="text-gray-400">(optional)</span>
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="w-full border border-border rounded-md p-3"
+              />
+            </div>
 
             {/* Phone */}
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number *"
-              required
-              className="w-full border border-border rounded-md p-3"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Phone Number <span className="text-red-500">*</span>
+              </label>
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Best number to reach you"
+                required
+                className="w-full border-2 border-green-200 rounded-md p-3 focus:border-green-500 focus:outline-none"
+              />
+
+              <p className="text-xs text-gray-500 mt-1">
+                We'll use this number to contact you about your quote.
+              </p>
+            </div>
 
             {/* Product */}
-            <input
-              type="text"
-              name="product"
-              value={product}
-              onChange={(e) => setProduct(e.target.value)}
-              placeholder="Product (e.g. iPhone 13, MacBook Air M1)"
-              required
-              className="w-full border border-border rounded-md p-3"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                What are you selling?
+              </label>
+
+              <input
+                type="text"
+                name="product"
+                value={product}
+                onChange={(e) => setProduct(e.target.value)}
+                placeholder="e.g. iPhone 13, Samsung S23"
+                required
+                className="w-full border border-border rounded-md p-3"
+              />
+            </div>
 
             {/* Product Condition */}
             <div>
@@ -182,7 +255,7 @@ export const QuoteFormSection = ({
                 value={condition}
                 onChange={(e) => setCondition(e.target.value)}
                 required
-                className="w-full border border-border rounded-md p-3"
+                className="w-full border border-border rounded-md p-3 bg-white"
               >
                 <option value="">Select Condition</option>
                 <option value="New Sealed">New Sealed</option>
@@ -251,12 +324,19 @@ export const QuoteFormSection = ({
             )}
 
             {/* Storage */}
-            <input
-              type="text"
-              name="storage"
-              placeholder="Storage Size (if applicable) e.g. 128GB"
-              className="w-full border border-border rounded-md p-3"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Storage{" "}
+                <span className="text-gray-400">(if applicable)</span>
+              </label>
+
+              <input
+                type="text"
+                name="storage"
+                placeholder="e.g. 128GB"
+                className="w-full border border-border rounded-md p-3"
+              />
+            </div>
 
             {/* Hidden anti-spam */}
             <input
@@ -279,9 +359,14 @@ export const QuoteFormSection = ({
               className="w-full text-lg py-6 bg-green-600 text-white hover:bg-green-700 disabled:opacity-60"
             >
               {isSubmitting
-                ? "Submitting..."
-                : "Submit Quote Request"}
+                ? "Sending Your Request..."
+                : "Get My Cash Quote"}
             </Button>
+
+            <p className="text-center text-xs text-gray-500">
+              Free quote • No obligation • Your information is only used to
+              contact you about your request
+            </p>
 
           </form>
         )}
