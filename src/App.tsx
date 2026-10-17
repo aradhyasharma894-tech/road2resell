@@ -16,6 +16,7 @@ import Drones from "./pages/Drones";
 import SmartWatches from "./pages/SmartWatches";
 import Headphones from "./pages/Headphones";
 import OtherDevices from "./pages/OtherDevices";
+import Shop from "./pages/Shop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/accepted-devices" element={<AcceptedDevices />} />
 
+            {/* Storefront */}
+            <Route path="/shop" element={<Shop />} />
+
             {/* Category Pages */}
             <Route path="/phones" element={<Phones />} />
             <Route path="/laptops" element={<Laptops />} />
@@ -47,7 +51,6 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
