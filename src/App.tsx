@@ -17,6 +17,7 @@ import SmartWatches from "./pages/SmartWatches";
 import Headphones from "./pages/Headphones";
 import OtherDevices from "./pages/OtherDevices";
 import Shop from "./pages/Shop";
+import OrderConfirmation from "./pages/OrderConfirmation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,16 +28,12 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/accepted-devices" element={<AcceptedDevices />} />
-
-            {/* Storefront */}
             <Route path="/shop" element={<Shop />} />
-
-            {/* Category Pages */}
+            <Route path="/order-confirmation" element={<OrderConfirmation />} />
             <Route path="/phones" element={<Phones />} />
             <Route path="/laptops" element={<Laptops />} />
             <Route path="/tablets" element={<Tablets />} />
@@ -46,8 +43,6 @@ const App = () => (
             <Route path="/smart-watches" element={<SmartWatches />} />
             <Route path="/headphones" element={<Headphones />} />
             <Route path="/other-devices" element={<OtherDevices />} />
-
-            {/* Catch-all */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
