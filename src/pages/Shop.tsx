@@ -25,6 +25,18 @@ type CartItem = {
   quantity: number;
 };
 
+type CustomerDetails = {
+  full_name: string;
+  email: string;
+  phone: string;
+  address_line1: string;
+  address_line2: string;
+  city: string;
+  province: string;
+  postal_code: string;
+  country: string;
+};
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const WHATSAPP_NUMBER = "19426603737";
@@ -158,6 +170,10 @@ export default function Shop() {
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [checkoutError, setCheckoutError] = useState("");
+  const [customer, setCustomer] = useState<CustomerDetails>({
+    full_name: "", email: "", phone: "", address_line1: "", address_line2: "",
+    city: "", province: "", postal_code: "", country: "Canada",
+  });
 
   useEffect(() => {
     let mounted = true;
@@ -320,6 +336,16 @@ export default function Shop() {
 
   async function beginCheckout() {
     setCheckoutError("");
+    if (
+      !customer.full_name.trim() ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email.trim()) ||
+      !customer.phone.trim() || !customer.address_line1.trim() ||
+      !customer.city.trim() || !customer.province.trim() ||
+      !customer.postal_code.trim() || customer.country !== "Canada"
+    ) {
+      setCheckoutError("Please complete all required contact and Canadian shipping fields before continuing.");
+      return;
+    }
 
     // The current reservation/checkout Edge Function supports one inventory
     // item per checkout, quantity one.
@@ -350,7 +376,20 @@ export default function Shop() {
             apikey: SUPABASE_ANON_KEY,
             Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
           },
-          body: JSON.stringify({ inventory_id: String(inventoryId) }),
+          body: JSON.stringify({
+            inventory_id: String(inventoryId),
+            customer: {
+              ...customer,
+              full_name: customer.full_name.trim(),
+              email: customer.email.trim().toLowerCase(),
+              phone: customer.phone.trim(),
+              address_line1: customer.address_line1.trim(),
+              address_line2: customer.address_line2.trim(),
+              city: customer.city.trim(),
+              province: customer.province.trim(),
+              postal_code: customer.postal_code.trim(),
+            },
+          }),
         },
       );
 
@@ -872,8 +911,28 @@ export default function Shop() {
                 </span>
               </div>
 
-              <p className="mt-2 text-[10px] leading-5 text-neutral-400">
-                Secure payment is processed by Stripe. This checkout currently supports one item per order, quantity 1. Shipping/tax handling follows the setup in your Stripe Checkout session.
+              {cart.length > 0 && (
+                <div className="mt-5 space-y-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-700">Contact information</p>
+                  <input aria-label="Full name" autoComplete="name" required value={customer.full_name} onChange={(e) => setCustomer({ ...customer, full_name: e.target.value })} placeholder="Full name *" className="w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  <input aria-label="Email address" type="email" autoComplete="email" required value={customer.email} onChange={(e) => setCustomer({ ...customer, email: e.target.value })} placeholder="Email address *" className="w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  <input aria-label="Phone number" type="tel" autoComplete="tel" required value={customer.phone} onChange={(e) => setCustomer({ ...customer, phone: e.target.value })} placeholder="Phone number *" className="w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  <p className="pt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-700">Shipping address (Canada)</p>
+                  <input aria-label="Street address" autoComplete="address-line1" required value={customer.address_line1} onChange={(e) => setCustomer({ ...customer, address_line1: e.target.value })} placeholder="Street address *" className="w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  <input aria-label="Apartment or unit" autoComplete="address-line2" value={customer.address_line2} onChange={(e) => setCustomer({ ...customer, address_line2: e.target.value })} placeholder="Apartment / unit (optional)" className="w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  <div className="grid grid-cols-2 gap-3">
+                    <input aria-label="City" autoComplete="address-level2" required value={customer.city} onChange={(e) => setCustomer({ ...customer, city: e.target.value })} placeholder="City *" className="min-w-0 w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                    <input aria-label="Province" autoComplete="address-level1" required value={customer.province} onChange={(e) => setCustomer({ ...customer, province: e.target.value })} placeholder="Province *" className="min-w-0 w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <input aria-label="Postal code" autoComplete="postal-code" required value={customer.postal_code} onChange={(e) => setCustomer({ ...customer, postal_code: e.target.value.toUpperCase() })} placeholder="Postal code *" className="min-w-0 w-full border border-[#deded8] bg-white px-3 py-3 text-sm outline-none focus:border-[#6e8a70]" />
+                    <input aria-label="Country" value="Canada" readOnly className="min-w-0 w-full border border-[#deded8] bg-[#f1f1ed] px-3 py-3 text-sm text-neutral-500" />
+                  </div>
+                </div>
+              )}
+
+              <p className="mt-3 text-[10px] leading-5 text-neutral-400">
+                Your details are linked to your order. Payment is processed securely by Stripe. One item per order is currently supported.
               </p>
 
               {checkoutError && (
@@ -888,7 +947,10 @@ export default function Shop() {
                 disabled={
                   checkoutLoading ||
                   cart.length !== 1 ||
-                  cart[0]?.quantity !== 1
+                  cart[0]?.quantity !== 1 ||
+                  !customer.full_name.trim() || !customer.email.trim() || !customer.phone.trim() ||
+                  !customer.address_line1.trim() || !customer.city.trim() || !customer.province.trim() ||
+                  !customer.postal_code.trim()
                 }
                 className="mt-5 w-full bg-[#172119] px-5 py-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#314b34] disabled:cursor-not-allowed disabled:bg-[#e7e7e2] disabled:text-neutral-400"
               >
